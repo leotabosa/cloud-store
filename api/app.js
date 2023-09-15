@@ -78,5 +78,3 @@ app.use("/", router);
 
 app.listen(port);
 console.log("Servidor iniciado!");
-
-module.exports = app;
