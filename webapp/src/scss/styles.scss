@@ -1,0 +1,21 @@
+@import "bootstrap/scss/bootstrap";
+@import "./landing-page.scss";
+
+.icon {
+  will-change: background-color;
+  cursor: pointer;
+  padding: 4px;
+  transition: background-color 0.2s ease;
+  border-radius: 100%;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+  }
+}
+
+.toast-absolute {
+  position: absolute;
+  right: 0;
+  z-index: 9000;
+}
