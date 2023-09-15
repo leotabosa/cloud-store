@@ -1,4 +1,7 @@
 const path = require("path");
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export default {
   root: path.resolve(__dirname, "src"),
