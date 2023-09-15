@@ -15,6 +15,7 @@ export default {
           "src/gestao-administrativa.html"
         ),
         cadastroUsuario: path.resolve(__dirname, "src/cadastro-usuario.html"),
+        svgLanding: path.resolve(__dirname, "src/assets/landing-page.svg"),
       },
     },
   },
