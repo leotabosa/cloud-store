@@ -8,6 +8,7 @@ async function connect() {
   Parse.initialize(process.env.APP_ID, process.env.JS_KEY);
   Parse.serverURL = "https://parseapi.back4app.com/";
 }
+connect();
 
 const express = require("express");
 const app = express();
@@ -18,8 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const router = express.Router();
-
-connect();
 
 router.get("/usuario/:id?", async function (req, res, next) {
   try {
