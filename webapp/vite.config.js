@@ -19,6 +19,7 @@ export default {
           "src/cadastro-funcionario.html"
         ),
         cadastroProduto: path.resolve(__dirname, "src/cadastro-produto.html"),
+        gestaoProduto: path.resolve(__dirname, "src/gestao-produto.html"),
       },
     },
   },
