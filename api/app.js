@@ -20,10 +20,11 @@ app.use(express.json());
 
 const router = express.Router();
 
-router.get("/usuario/:id?", async function (req, res, next) {
+// FUNCIONARIO
+router.get("/funcionario/:id?", async function (req, res, next) {
   try {
-    const usuario = Parse.Object.extend("Usuario");
-    const query = new Parse.Query(usuario);
+    const funcionario = Parse.Object.extend("Funcionario");
+    const query = new Parse.Query(funcionario);
 
     if (req.params.id) res.json(await query.get(req.params.id));
     else res.json(await query.find());
@@ -33,40 +34,94 @@ router.get("/usuario/:id?", async function (req, res, next) {
   }
 });
 
-router.post("/usuario", async function (req, res, next) {
+router.post("/funcionario", async function (req, res, next) {
   try {
-    const usuario = new Parse.Object("Usuario");
-    usuario.set("nome", req.body.nome);
-    usuario.set("email", req.body.email);
-    res.json(await usuario.save());
+    const funcionario = new Parse.Object("Funcionario");
+    funcionario.set("nome", req.body.nome);
+    funcionario.set("email", req.body.email);
+    res.json(await funcionario.save());
   } catch (err) {
     console.log(err);
     res.status(400).json({ erro: `${err.message}` });
   }
 });
 
-router.put("/usuario/:id", async function (req, res, next) {
+router.put("/funcionario/:id", async function (req, res, next) {
   try {
-    const usuario = Parse.Object.extend("Usuario");
-    const query = new Parse.Query(usuario);
-    const usuarioEncontrado = await query.get(req.params.id);
+    const funcionario = Parse.Object.extend("Funcionario");
+    const query = new Parse.Query(funcionario);
+    const funcionarioEncontrado = await query.get(req.params.id);
 
-    usuarioEncontrado.set("nome", req.body.nome);
-    usuarioEncontrado.set("email", req.body.email);
-    res.json(await usuarioEncontrado.save());
+    funcionarioEncontrado.set("nome", req.body.nome);
+    funcionarioEncontrado.set("email", req.body.email);
+    res.json(await funcionarioEncontrado.save());
   } catch (err) {
     console.log(err);
     res.status(400).json({ erro: `${err.message}` });
   }
 });
 
-router.delete("/usuario/:id", async function (req, res, next) {
+router.delete("/funcionario/:id", async function (req, res, next) {
   try {
-    const usuario = Parse.Object.extend("Usuario");
-    const query = new Parse.Query(usuario);
-    const usuarioEncontrado = await query.get(req.params.id);
+    const funcionario = Parse.Object.extend("Funcionario");
+    const query = new Parse.Query(funcionario);
+    const funcionarioEncontrado = await query.get(req.params.id);
 
-    res.json(await usuarioEncontrado.destroy());
+    res.json(await funcionarioEncontrado.destroy());
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({ erro: `${err.message}` });
+  }
+});
+
+// PRODUTO
+router.get("/produto/:id?", async function (req, res, next) {
+  try {
+    const produto = Parse.Object.extend("Produto");
+    const query = new Parse.Query(produto);
+
+    if (req.params.id) res.json(await query.get(req.params.id));
+    else res.json(await query.find());
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({ erro: `${err}` });
+  }
+});
+
+router.post("/produto", async function (req, res, next) {
+  try {
+    const produto = new Parse.Object("Produto");
+    produto.set("descricao", req.body.descricao);
+    produto.set("valor", req.body.valor);
+    res.json(await produto.save());
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({ erro: `${err.message}` });
+  }
+});
+
+router.put("/produto/:id", async function (req, res, next) {
+  try {
+    const produto = Parse.Object.extend("Produto");
+    const query = new Parse.Query(produto);
+    const produtoEncontrado = await query.get(req.params.id);
+
+    produtoEncontrado.set("descricao", req.body.descricao);
+    produtoEncontrado.set("valor", req.body.valor);
+    res.json(await produtoEncontrado.save());
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({ erro: `${err.message}` });
+  }
+});
+
+router.delete("/produto/:id", async function (req, res, next) {
+  try {
+    const produto = Parse.Object.extend("Produto");
+    const query = new Parse.Query(produto);
+    const produtoEncontrado = await query.get(req.params.id);
+
+    res.json(await produtoEncontrado.destroy());
   } catch (err) {
     console.log(err);
     res.status(400).json({ erro: `${err.message}` });

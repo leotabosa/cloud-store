@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lista de produtos - Cloud Store</title>
+    <title>Gestão de funcionários - Cloud Store</title>
     <script type="module" src="./js/main.js"></script>
-    <script type="module" src="./js/gestao.js"></script>
+    <script type="module" src="./js/gestao-funcionario.js"></script>
   </head>
   <body style="height: 100vh">
     <div
-      id="toast-erro-usuario-gestao"
+      id="toast-erro-funcionario-gestao"
       class="toast mt-4 mx-4 toast-absolute"
       role="alert"
       aria-live="assertive"
@@ -39,11 +39,11 @@
           aria-label="Close"
         ></button>
       </div>
-      <div id="texto-toast-erro-usuario-gestao" class="toast-body"></div>
+      <div id="texto-toast-erro-funcionario-gestao" class="toast-body"></div>
     </div>
 
     <div
-      id="toast-sucesso-usuario-gestao"
+      id="toast-sucesso-funcionario-gestao"
       class="toast mt-4 mx-4 toast-absolute"
       role="alert"
       aria-live="assertive"
@@ -73,13 +73,13 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="toast-body">Usuário removido.</div>
+      <div class="toast-body">Funcionário removido.</div>
     </div>
 
     <div class="container py-4 px-3 mx-auto my-auto r">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="gestao-administrativa.html">
+          <a class="navbar-brand" href="gestao-funcionario.html">
             Cloud Store
           </a>
 
@@ -100,14 +100,29 @@
                     <a
                       class="dropdown-item active"
                       aria-current="page"
-                      href="gestao-administrativa.html"
+                      href="gestao-funcionario.html"
+                      title="Gestão administrativa de funcionários"
                     >
-                      Gestão administrativa
+                      Gestão de funcionários
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="cadastro-usuario.html">
-                      Cadastro de usuário
+                    <a
+                      class="dropdown-item"
+                      href="cadastro-funcionario.html"
+                      title="Cadastro de funcionários para a loja"
+                    >
+                      Cadastro de funcionário
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="gestao-produto.html">
+                      Gestão de produtos
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="cadastro-produto.html">
+                      Cadastro de produto
                     </a>
                   </li>
                 </ul>
@@ -124,7 +139,7 @@
             <th scope="col" style="max-width: 150px">Ações</th>
           </tr>
         </thead>
-        <tbody id="tabela-usuarios"></tbody>
+        <tbody id="tabela-funcionarios"></tbody>
       </table>
     </div>
   </body>

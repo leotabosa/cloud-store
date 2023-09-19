@@ -10,12 +10,15 @@ export default {
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "src/index.html"),
-        gestaoAdministrativa: path.resolve(
+        gestaoFuncionario: path.resolve(
           __dirname,
-          "src/gestao-administrativa.html"
+          "src/gestao-funcionario.html"
         ),
-        cadastroUsuario: path.resolve(__dirname, "src/cadastro-usuario.html"),
-        svgLanding: path.resolve(__dirname, "src/assets/landing-page.svg"),
+        cadastroFuncionario: path.resolve(
+          __dirname,
+          "src/cadastro-funcionario.html"
+        ),
+        cadastroProduto: path.resolve(__dirname, "src/cadastro-produto.html"),
       },
     },
   },

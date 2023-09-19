@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cadastro de usuário - Cloud Store</title>
+    <title>Cadastro de produto - Cloud Store</title>
     <script type="module" src="./js/main.js"></script>
-    <script type="module" src="./js/cadastro-usuario.js"></script>
+    <script type="module" src="./js/cadastro-produto.js"></script>
   </head>
   <body style="height: 100vh">
     <div
-      id="toast-erro-usuario"
+      id="toast-erro-produto"
       class="toast mt-4 mx-4 toast-absolute"
       role="alert"
       aria-live="assertive"
@@ -40,16 +40,14 @@
         ></button>
       </div>
       <div class="toast-body">
-        Não foi possível carregar o usuário para edição.
+        Não foi possível carregar o produto para edição.
       </div>
     </div>
 
     <div class="container py-4 px-3 mx-auto my-auto r">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="gestao-administrativa.html"
-            >Cloud Store</a
-          >
+          <a class="navbar-brand" href="gestao-funcionario.html">Cloud Store</a>
 
           <div class="navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -68,17 +66,28 @@
                     <a
                       class="dropdown-item"
                       aria-current="page"
-                      href="gestao-administrativa.html"
+                      href="gestao-funcionario.html"
                     >
-                      Gestão administrativa
+                      Gestão de funcionários
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="cadastro-funcionario.html">
+                      Cadastro de funcionário
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="gestao-produto.html">
+                      Gestão de produtos
                     </a>
                   </li>
                   <li>
                     <a
                       class="dropdown-item active"
-                      href="cadastro-usuario.html"
+                      aria-current="page"
+                      href="cadastro-produto.html"
                     >
-                      Cadastro de usuário
+                      Cadastro de produto
                     </a>
                   </li>
                 </ul>
@@ -93,38 +102,40 @@
       >
         <div class="row d-flex flex-column justify-content-center">
           <div>
-            <h2 id="titulo-pagina" class="mb-4">Criação de usuário</h2>
-            <form id="form-criar-usuario">
+            <h2 id="titulo-pagina" class="mb-4">Criação de produto</h2>
+            <form id="form-criar-produto">
               <div class="mb-3">
-                <label for="input-nome" class="form-label">Nome</label>
+                <label for="input-descricao" class="form-label"
+                  >Descrição</label
+                >
                 <input
-                  id="input-nome"
+                  id="input-descricao"
                   type="text"
                   class="form-control"
                   required
                 />
               </div>
               <div class="mb-3">
-                <label for="input-email" class="form-label">Email</label>
+                <label for="input-valor" class="form-label">Valor</label>
                 <input
-                  id="input-email"
-                  type="email"
+                  id="input-valor"
+                  type="number"
                   class="form-control"
                   required
                 />
               </div>
               <div
-                id="erro-criar-usuario"
+                id="erro-criar-produto"
                 class="alert alert-danger d-none"
                 role="alert"
               ></div>
               <button
-                id="botao-criar-usuario"
+                id="botao-criar-produto"
                 type="submit"
                 class="btn btn-primary mt-3"
                 style="width: 100%"
               >
-                Criar usuário
+                Criar produto
               </button>
             </form>
           </div>
